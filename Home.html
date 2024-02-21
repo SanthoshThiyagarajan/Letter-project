@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="50"> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\kamali project\image\login logo.png">
+  <title>LOGIN </title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="C:\Users\Santhosh\Desktop\kamali project\image\letter logo.png" width="50px" height="50px">
+          <h1>TITLE</h1>
+          <p>Your Gateway to Communicate with Teachers and HOD</p>
+        </div>
+      </header>
+      
+
+  <section class="login-section">
+    <div class="login-container">
+        <img src="C:\Users\Santhosh\Desktop\kamali project\image\student logo.png" width="50px" height="50px">
+      <h2>Student Login</h2>
+      <form class="login-form" id="studentLoginForm">
+        <label for="studentUsername">Username:</label>
+        <input type="text" id="studentUsername" required>
+        <br>
+        <label for="studentPassword">Password:</label>
+        <input type="password" id="studentPassword" required>
+        <br>
+        <button type="button" onclick="login('student')">Login</button>
+      </form>
+    </div>
+
+    <div class="login-container">
+        <img src="C:\Users\Santhosh\Desktop\kamali project\image\teacher logo.png" width="50px" height="50px">
+      <h2>Teacher Login</h2>
+      <form class="login-form" id="teacherLoginForm">
+        <label for="teacherUsername">Username:</label>
+        <input type="text" id="teacherUsername" required>
+        <br>
+        <label for="teacherPassword">Password:</label>
+        <input type="password" id="teacherPassword" required>
+        <br>
+        <button type="button" onclick="login('teacher')">Login</button>
+      </form>
+    </div>
+
+    <div class="login-container">
+        <img src="C:\Users\Santhosh\Desktop\kamali project\image\hod logo.png" width="50px" height="50px">
+      <h2>HOD Login</h2>
+      <form class="login-form" id="hodLoginForm">
+        <label for="hodUsername">Username:</label>
+        <input type="text" id="hodUsername" required>
+        <br>
+        <label for="hodPassword">Password:</label>
+        <input type="password" id="hodPassword" required>
+        <br>
+        <button type="button" onclick="login('hod')">Login</button>
+      </form>
+    </div>
+  </section>
+</div>
+<br>
+<br>
+<script src="myscript.js"></script>
+<section class="cta">
+    <div class="container">
+      <h2>Ready to streamline your communication?</h2>
+      <p>ApplyLetter Hub is here to simplify the application process between students, teachers, and HOD. Get started now!</p>
+      </div>
+  </section>
+<footer>
+    <div class="container">
+      <p>&copy; 2024 TITLE. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

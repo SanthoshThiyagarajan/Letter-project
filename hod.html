@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="50"> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\kamali project\image\hod logo.png">
+  <title>HOD</title>
+</head>
+<body>
+    <div class="container">
+        <h2>HOD Approval</h2>
+      
+        <p id="studentName"></p>
+        <pre id="generatedLetter"></pre>
+          <button onclick="deleteLetter()">Delete</button>
+          <button onclick="showLess()">showLess</button>
+         </div>
+      
+      <script>
+      // Load student name and letter content from local storage
+      const studentName = localStorage.getItem('studentName');
+      const letterContent = localStorage.getItem('letterContent');
+      document.getElementById('Name').innerText = `Student Name: ${Name}`;
+      document.getElementById('generatedLetter').innerText = letterContent;
+    function deleteLetter() {
+        // Delete letter content
+        localStorage.removeItem('letterContent');
+        alert('Letter deleted.');
+      
+        // Hide letter content and action buttons
+        document.getElementById('generatedLetter').innerText = '';
+        document.getElementById('actionButtons').style.display = 'none';
+        // Enable the "Show Letter" button again
+        document.querySelector('button[onclick="showMore()"]').disabled = false;
+      }
+      
+      function showLess() {
+        // Hide letter content and action buttons
+        document.getElementById('generatedLetter').innerText = '';
+        document.getElementById('actionButtons').style.display = 'none';
+        // Enable the "Show Letter" button again
+        document.querySelector('button[onclick="showMore()"]').disabled = false;
+      }
+      </script>
+    
+</body>
+</html>

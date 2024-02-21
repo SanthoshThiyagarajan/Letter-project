@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="50"> 
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\kamali project\image\teacher logo.png">
+  <title>Teachers</title>
+</head>
+<body>
+    <!--<div class="container">
+        <h2>Teacher Approval</h2>
+      
+        <p id="studentName"></p>
+        <pre id="generatedLetter"></pre>
+        <button onclick="approveLetter()">Approval</button>
+        <button onclick="rejectLetter()">Rejection</button>
+        <button onclick="showLess()">Show Less</button>
+    </div>
+      
+    <script>
+        // Load student name and letter content from local storage
+        const studentName = localStorage.getItem('studentName');
+        const letterContent = localStorage.getItem('letterContent');
+        document.getElementById('Name').innerText = `Student Name: ${Name}`;
+        document.getElementById('generatedLetter').innerText = letterContent;
+
+        function approveLetter() {
+            // Update approval status to 'approved'
+            localStorage.setItem('approvalStatus', 'approved');
+            alert('Letter approved.');
+        }
+
+        function rejectLetter() {
+            // Update approval status to 'rejected'
+            localStorage.setItem('approvalStatus', 'rejected');
+            alert('Letter rejected.');
+
+            // Clear letter content
+            document.getElementById('generatedLetter').innerText = '';
+            document.getElementById('actionButtons').style.display = 'none';
+        }
+
+        function showLess() {
+            // Hide letter content and action buttons
+            document.getElementById('generatedLetter').innerText = '';
+            document.getElementById('actionButtons').style.display = 'none';
+        }
+    </script>-->
+    <div class="container">
+      <h2>Teacher Approval</h2>
+    
+      <p>Please review the letter:</p>
+      <pre id="generatedLetter"></pre>
+    
+      <button onclick="approveLetter()">Approve</button>
+      <button onclick="rejectLetter()">Reject</button>
+    </div>
+    
+    <script>
+    // Load letter content from local storage
+    const letterContent = localStorage.getItem('letterContent');
+    document.getElementById('generatedLetter').innerText = letterContent;
+    
+    function approveLetter() {
+      // Update approval status to 'approved'
+      localStorage.setItem('approvalStatus', 'approved');
+    
+      // Update teacher permission to 'granted'
+      localStorage.setItem('teacherPermission', 'granted');
+    
+      alert('Permission granted. You can view the letter on this page.');
+    }
+    
+    function rejectLetter() {
+      // Update approval status to 'rejected'
+      localStorage.setItem('approvalStatus', 'rejected');
+    
+      // Update teacher permission to 'rejected'
+      localStorage.setItem('teacherPermission', 'rejected');
+    
+      alert('Permission rejected. Please wait for teacher approval.');
+    }
+  </script>
+    <script src="myscript.js"></script>
+</body>
+</html>
