@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\pro\images\studentlogo.png">
+  <title>Students</title>
+</head>
+<body>
+  <div class="container">
+    <form id="applicationForm">
+      <img src="C:\Users\Santhosh\Desktop\pro\images\studentlogo.png" width="50px" height="50px">
+      <h2>Apply Letters</h2>
+      
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br>
+      
+      <label for="rollNumber">Roll Number:</label>
+      <input type="text" id="rollNumber" name="rollNumber" required><br>
+
+      <label for="mba">MBA Type:</label>
+      <select id="mba" name="mba" required>
+        <option value="Select">Select</option>
+        <option value="MBA-GA">MBA-GA</option>
+        <option value="MBA-IT">MBA-IT</option>
+      </select><br>
+
+      <label for="year">Year:</label>
+      <select id="year" name="year" required>
+        <option value="Select">Select</option>
+        <option value="1-YEAR">1-Year</option>
+        <option value="2-YEAR">2-Year</option>
+      </select><br>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required><br>
+      
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" name="email" required><br>
+      
+      <label for="nature">Nature of Letter:</label>
+      <select id="nature" name="nature" required>
+        <option value="Select">Select</option>
+        <option value="onDuty">On Duty</option>
+        <option value="permission">Permission</option>
+        <option value="industrialVisit">Industrial Visit</option>
+        <option value="apology">Apology</option>
+        <option value="Leave Letter">Leave Letter</option>
+      </select><br>
+      
+      <label for="reason">Reason:</label>
+      <textarea id="reason" name="reason" rows="4" required></textarea><br>
+      
+      <label for="proof">Proof (Choose File):</label>
+      <input type="file" id="proof" name="proof" accept=".pdf, .doc, .docx"><br>
+      
+      <button type="button" id="nextbtn" onclick="generateLetter()">NEXT</button>
+    </form>
+  </div>
+  <script>
+    function generateLetter() {
+      const name = document.getElementById('name').value;
+      const rollNumber = document.getElementById('rollNumber').value;
+      const mba = document.getElementById('mba').value;
+      const year = document.getElementById('year').value;
+      const date = document.getElementById('date').value;
+      const email = document.getElementById('email').value;
+      const nature = document.getElementById('nature').value;
+      const reason = document.getElementById('reason').value;
+
+      // Generate letter content based on form data
+      let letterContent = `
+        ${name}
+        ${rollNumber}
+        ${mba}
+        ${year}
+        ${date}
+        ${email}
+        
+        Dear Sir/Madam,
+        
+        I am writing to request ${nature} for ${reason} on ${date}.
+        
+        Sincerely,
+        ${name}`;
+
+      // Display the generated letter content
+       // You can replace this with code to display or save the letter content as needed
+    
+       alert(letterContent);
+      
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\pro\images\letterlogo.png">
+  <title>Letter</title>
+</head>
+<body>
+  <div id="letterContent"></div>
+  <center><button onclick="submitLetter()">Submit</button></center>
+
+  <script>
+    // Get the letter content from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const content = urlParams.get('content');
+
+    // Display the letter content on the page
+    document.getElementById('letterContent').innerText = decodeURIComponent(content);
+

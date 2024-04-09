@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\pro\images\letterlogo1.png">
+  <title>Letter</title>
+  <style>
+    #letterContent {
+      text-align: center;
+      margin: 50px auto;
+      max-width: 600px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div id="letterContent"></div>
+  <center><button onclick="showLetterToTeacher()">Submit</button></center>
+
+  <script>
+    // Get the letter content from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const content = urlParams.get('content');
+    
+    // Display the letter content on the page
+    document.getElementById('letterContent').innerText = decodeURIComponent(content);
+
+    // Function to show letter content to teacher without redirecting
+    function showLetterToTeacher() {
+      // Check if the user is authorized (e.g., by checking user role or authentication status)
+      const userRole = 'teacher'; // Assuming the user role is stored somewhere
+      
+      if (userRole === 'teacher') {
+        // Send an HTTP request to the teacher's endpoint with the letter content
+        // Simulating a POST request here, replace 'teacher-endpoint' with your actual endpoint
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'teacher-endpoint', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({ content }));
+        alert('Letter sent to teacher successfully.');
+      } else {
+        alert('You are not authorized to submit this letter.');
+      }
+    }
+  </script>
+</body>
+</html>

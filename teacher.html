@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="C:\Users\Santhosh\Desktop\pro\images\teacherlogo.png">
+  <title>Teacher Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn {
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-open {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .btn-approve {
+      background-color: #28a745;
+      color: #fff;
+    }
+    .btn-reject {
+      background-color: #dc3545;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>Teacher Dashboard</h1>
+  <table id="lettersTable">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Nature of Letter</th>
+        <th>Reason</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="lettersBody">
+      <!-- Dynamic rows will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Your existing functions
+
+    // Function to dynamically add rows to the table
+    function addTableRow(content) {
+      const tbody = document.querySelector('#lettersBody');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${content.name}</td>
+        <td>${content.nature}</td>
+        <td>${content.reason}</td>
+        <td>
+          <button class="btn btn-open" onclick="openLetter('${content.encodedLetterContent}')">Open</button>
+          <button class="btn btn-approve" onclick="approveLetter(this)">Approve</button>
+          <button class="btn btn-reject" onclick="rejectLetter(this)">Reject</button>
+        </td>
+      `;
+      tbody.appendChild(newRow);
+    }
+    window.location.href = `student,html?name=${name}&nature=${nature}`;
+    // Extract parameters from the URL query string
+
+
+
+
+    // Fetch student details from the URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const nature = urlParams.get('nature');
+    const reason = urlParams.get('reason'); // Get reason from URL query parameter
+    const encodedLetterContent = urlParams.get('content');
+// Call a function based on the extracted parameters
+if (name && nature) {
+  // Call your function here based on the extracted parameters
+  myFunction(name, nature);
+} else {
+  console.error('Missing parameters in the URL.');
+}
+
+// Define your function
+function myFunction(name, nature) {
+  // Your function logic here
+  console.log(`Called myFunction with name: ${name} and nature: ${nature}`);
+}
+    // Add the fetched student details to the table
+    addTableRow({ name, nature, reason, encodedLetterContent });
+
+    function openLetter(content) {
+      // Open "techletter.html" in a new window with the letter content
+      const newWindow = window.open('techletter.html');
+      newWindow.document.write(`<html><head><title>Letter</title></head><body><div id="letterContent">${content}</div></body></html>`);
+      newWindow.document.close();
+    }
+
+    function approveLetter(button) {
+      const row = button.closest('tr');
+      const studentName = row.cells[0].innerText; // Get student name from the first cell
+      const natureOfLetter = row.cells[1].innerText; // Get nature of letter from the second cell
+      alert(`Letter from ${studentName} regarding ${natureOfLetter} has been approved.`);
+      // Remove the reject button
+      row.querySelector('.btn-reject').style.display = 'none';
+    }
+
+    function rejectLetter(button) {
+      const row = button.closest('tr');
+      const studentName = row.cells[0].innerText; // Get student name from the first cell
+      const natureOfLetter = row.cells[1].innerText; // Get nature of letter from the second cell
+      alert(`Letter from ${studentName} regarding ${natureOfLetter} has been rejected.`);
+      // Remove the approve button
+      row.querySelector('.btn-approve').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
