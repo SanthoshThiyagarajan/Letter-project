@@ -28,7 +28,7 @@ This project aims to create an online letter submission system where students ca
 
 To run the project locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository: `https://github.com/SanthoshThiyagarajan/Letter-project.git`
 2. [Additional setup instructions if needed]
 3. Open the project in your preferred code editor.
 4. [Instructions to start the development server or run the application]
@@ -38,9 +38,9 @@ To run the project locally, follow these steps:
 We welcome contributions from the community. To contribute to this project:
 
 1. Fork the repository.
-2. Create a new branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -am 'Add new feature'`
-4. Push to the branch: `git push origin feature-name`
+2. Create a new branch: `https://github.com/SanthoshThiyagarajan/Letter-project.git`
+3. Commit your changes: `https://github.com/SanthoshThiyagarajan/Letter-project.git'`
+4. Push to the branch: `https://github.com/SanthoshThiyagarajan/Letter-project.git`
 5. Submit a pull request.
 
 ## License
